@@ -15,16 +15,17 @@ let currPlayer="X";
 let cells = document.querySelectorAll(".btn");
 let restartbtn = document.querySelector("#restart");
 
-document.addEventListener("keypress",()=>{
-    if(running == false){
-        initialiseGame();
-        running = true;
-    }
-    else{
-        console.log("Game has already Started");
-    }
-})
+// document.addEventListener("keypress",()=>{
+//     if(running == false){
+//         initialiseGame();
+//         running = true;
+//     }
+//     else{
+//         console.log("Game has already Started");
+//     }
+// })
 
+initialiseGame();
 
 function initialiseGame(){
     cells.forEach(cell => cell.addEventListener("click",cellClicked));
