@@ -15,7 +15,16 @@ let currPlayer="X";
 let cells = document.querySelectorAll(".btn");
 let restartbtn = document.querySelector("#restart");
 
-initialiseGame();
+document.addEventListener("keypress",()=>{
+    if(running == false){
+        initialiseGame();
+        running = true;
+    }
+    else{
+        console.log("Game has already Started");
+    }
+})
+
 
 function initialiseGame(){
     cells.forEach(cell => cell.addEventListener("click",cellClicked));
@@ -81,12 +90,3 @@ function restart(){
 }
 
 
-// document.addEventListener("keypress",()=>{
-//     if(running == false){
-//         running = true;
-//         h5.textContent =`${currPlayer}'s Turn`
-//     }
-//     else{
-//         console.log("Game has already Started");
-//     }
-// })
